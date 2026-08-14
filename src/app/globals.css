@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --muted: #fafafa;
+  --muted-foreground: #71717a;
+  --border: #d4d4d8;
+  --ring: #09090b;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    background: var(--background);
+    color-scheme: light;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    min-height: 100svh;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+
+  a {
+    @apply rounded-xs focus-visible:outline focus-visible:outline-offset-4;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-[1.125rem] leading-7 font-medium tracking-[-0.02em] md:text-xl;
+  }
+
+  .text-link {
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 58%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.24em;
+    transition:
+      color 180ms ease,
+      text-decoration-color 180ms ease;
+  }
+
+  .text-link:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .motion-safe-content {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
