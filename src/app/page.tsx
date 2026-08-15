@@ -5,6 +5,36 @@ import { ProjectList } from "@/components/project-list"
 import { StackList } from "@/components/stack-list"
 import { TextLink } from "@/components/text-link"
 import { portfolioContent } from "@/lib/portfolio-content"
+import { siteConfig } from "@/lib/site-config"
+
+const profilePageJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: siteConfig.url,
+  mainEntity: {
+    "@id": `${siteConfig.url}/#person`,
+    "@type": "Person",
+    name: portfolioContent.identity.fullName,
+    alternateName: ["Grégor Sternat", "gregorsternat"],
+    url: siteConfig.url,
+    description: siteConfig.description,
+    jobTitle: "Software Engineer",
+    homeLocation: {
+      "@type": "Place",
+      name: "Paris, France",
+    },
+    affiliation: {
+      "@type": "EducationalOrganization",
+      name: "Epitech",
+      sameAs: portfolioContent.education[0].href,
+    },
+    sameAs: [
+      portfolioContent.socialLinks.github,
+      portfolioContent.socialLinks.linkedin,
+      portfolioContent.socialLinks.twitter,
+    ],
+  },
+}).replace(/</g, "\\u003c")
 
 export default function Page() {
   const {
@@ -19,13 +49,17 @@ export default function Page() {
 
   return (
     <main id="top" className="w-full px-6 md:px-11 lg:w-[36%]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: profilePageJsonLd }}
+      />
       <header className="flex items-center pt-8 md:pt-10">
         <h1 className="font-medium text-foreground">
           <a
             href="#top"
             className="focus-visible:outline-1 focus-visible:outline-offset-4"
           >
-            {identity.shortName}
+            {identity.fullName.toLowerCase()}
           </a>
         </h1>
         <span aria-hidden="true" className="mx-3 text-muted-foreground">
