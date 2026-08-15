@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 
+import { siteConfig } from "@/lib/site-config"
+
 import "./globals.css"
 
 const geistSans = Geist({
@@ -10,19 +12,24 @@ const geistSans = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "Gregor Sternat — Software Engineer",
-  description:
-    "Gregor Sternat is a software engineering student at Epitech with production experience in backend systems, cloud infrastructure, AI-powered applications, and full-stack development.",
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Gregor Sternat — Software Engineer",
+    title: siteConfig.title,
     description:
       "Software engineering student at Epitech with production experience across backend, cloud infrastructure, AI-powered applications, and full-stack development.",
+    url: "/",
+    siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Gregor Sternat — Software Engineer",
+    title: siteConfig.title,
     description:
       "Software engineering student at Epitech with production experience across backend, cloud infrastructure, AI-powered applications, and full-stack development.",
   },
