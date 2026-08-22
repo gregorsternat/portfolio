@@ -36,3 +36,6 @@ pnpm build
 ```
 
 Portfolio content can be edited in `src/lib/portfolio-content.ts`.
+
+The selected projects link to the public Keyglass product site and Gregor's
+Raytracer repository.

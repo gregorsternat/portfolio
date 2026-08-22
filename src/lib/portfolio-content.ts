@@ -132,6 +132,14 @@ export const portfolioContent = {
   ],
   projects: [
     {
+      name: "Keyglass",
+      description:
+        "A native, local-first macOS workspace that keeps developer secrets in Apple Keychain and makes them available through a signed CLI.",
+      role: "Swift · SwiftUI · Apple Keychain",
+      year: 2026,
+      href: "https://keyglass.dev",
+    },
+    {
       name: "Raytracer",
       description:
         "A CPU-based ray tracer built in C++20, with configurable scenes and a plugin architecture for geometric primitives, materials, and lighting.",
