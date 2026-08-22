@@ -27,7 +27,8 @@ All editable portfolio content lives in
 `src/lib/portfolio-content.ts`. The introduction, experience, education, stack,
 and social links are adapted from Gregor's resume.
 
-The selected project links to Gregor's Raytracer repository.
+The selected projects link to the public Keyglass product site and Gregor's
+Raytracer repository.
 
 The GitHub, LinkedIn, and Twitter links point to Gregor's profiles.
 
