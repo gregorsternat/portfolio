@@ -59,11 +59,20 @@ export const portfolioContent = {
   experience: [
     {
       company: "Davai",
-      role: "Full-stack Developer Intern",
-      period: "Apr 2026 — Present",
+      role: "Freelance Full-stack Developer",
+      period: "Late Aug 2026 — Present",
       location: "Paris, France",
       description:
         "Design and ship end-to-end products across backend, frontend, mobile, and AWS cloud infrastructure, including AI-powered monitoring and internal automation platforms.",
+      href: "https://davai.co/",
+    },
+    {
+      company: "Davai",
+      role: "Full-stack Developer Intern",
+      period: "Apr 2026 — Aug 2026",
+      location: "Paris, France",
+      description:
+        "Designed and shipped end-to-end products across backend, frontend, mobile, and AWS cloud infrastructure, including AI-powered monitoring and internal automation platforms.",
       href: "https://davai.co/",
     },
     {
