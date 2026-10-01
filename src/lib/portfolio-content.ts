@@ -33,6 +33,7 @@ type PortfolioContent = {
     shortName: string
     fullName: string
   }
+  contactEmail: string
   introduction: readonly string[]
   experience: readonly Experience[]
   education: readonly Education[]
@@ -51,6 +52,7 @@ export const portfolioContent = {
     shortName: "gregor",
     fullName: "Gregor Sternat",
   },
+  contactEmail: "gregor.sternat@epitech.eu",
   introduction: [
     "I'm Gregor, a fourth-year software engineering student at Epitech based in Paris.",
     "I have production experience across backend systems, cloud infrastructure, AI-powered applications, and full-stack development.",
@@ -77,7 +79,7 @@ export const portfolioContent = {
     },
     {
       company: "Kiln",
-      role: "Back-end Developer Intern",
+      role: "Freelance Back-end Developer",
       period: "Sep 2025 — Feb 2026",
       location: "Paris, France",
       description:
@@ -104,7 +106,7 @@ export const portfolioContent = {
     },
     {
       company: "Kiln",
-      role: "Freelance Back-end Developer",
+      role: "Back-end Developer Intern",
       period: "Jul 2024 — Dec 2024",
       location: "Paris, France",
       description:

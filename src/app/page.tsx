@@ -15,6 +15,7 @@ const profilePageJsonLd = JSON.stringify({
     "@id": `${siteConfig.url}/#person`,
     "@type": "Person",
     name: portfolioContent.identity.fullName,
+    email: portfolioContent.contactEmail,
     alternateName: ["Grégor Sternat", "gregorsternat"],
     url: siteConfig.url,
     description: siteConfig.description,
@@ -39,6 +40,7 @@ const profilePageJsonLd = JSON.stringify({
 export default function Page() {
   const {
     identity,
+    contactEmail,
     introduction,
     experience,
     education,
@@ -87,6 +89,12 @@ export default function Page() {
               <TextLink href={socialLinks.twitter} external>
                 twitter
               </TextLink>
+            </li>
+            <li aria-hidden="true" className="text-muted-foreground">
+              /
+            </li>
+            <li>
+              <TextLink href={`mailto:${contactEmail}`}>mail</TextLink>
             </li>
           </ul>
         </nav>
