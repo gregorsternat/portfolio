@@ -58,6 +58,17 @@ export function ProjectList({
                 <ArrowUpRightIcon className="size-5 stroke-[1.6] md:size-6" />
               </motion.span>
             </motion.a>
+            {project.repositoryHref && (
+              <a
+                href={project.repositoryHref}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={`${project.name} on GitHub (opens in a new tab)`}
+                className="text-link inline-block focus-visible:outline-1 focus-visible:outline-offset-4"
+              >
+                GitHub
+              </a>
+            )}
           </li>
         ))}
       </ul>

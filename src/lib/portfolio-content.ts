@@ -4,6 +4,7 @@ export type Project = {
   role: string
   year: number
   href: string
+  repositoryHref?: string
 }
 
 export type Experience = {
@@ -140,6 +141,15 @@ export const portfolioContent = {
     },
   ],
   projects: [
+    {
+      name: "Gradavia",
+      description:
+        "An interactive platform for exploring and comparing French higher education admissions data, with Parcoursup statistics, historical trends, and source-backed indicators.",
+      role: "Rust · Next.js · PostgreSQL",
+      year: 2026,
+      href: "https://gradavia.com/",
+      repositoryHref: "https://github.com/gregorsternat/gradavia",
+    },
     {
       name: "Keyglass",
       description:
